@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DA CUNHA Alexandre — Plombier — Pessac</title>
+  <meta name="description" content="Plombier local à Pessac, DA CUNHA Alexandre offre des services de réparation rapide et de qualité. Contactez-nous pour un devis gratuit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1A73B8;
+      --secondary: #F7B32B;
+      --background: #F5FAFF;
+      --text: #1A2634;
+      --cta: #E94F37;
+      --radius: 4px;
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+      --section-padding: 64px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--background);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(26,115,184,0.10);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--primary);
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta-btn {
+      background: var(--cta);
+      color: #fff !important;
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      transition: opacity 0.2s !important;
+    }
+
+    .nav-cta-btn:hover {
+      opacity: 0.88;
+      color: #fff !important;
+    }
+
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      z-index: 999;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      padding: 14px 0;
+      border-bottom: 1px solid #eef2f7;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--primary);
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+      .hamburger {
+        display: none;
+      }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 64px;
+      background: var(--background);
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .hero-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(26,115,184,0.10);
+      color: var(--primary);
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: var(--radius);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      width: fit-content;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.6rem, 5vw, 3.8rem);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      color: #4a5568;
+      line-height: 1.65;
+      max-width: 520px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: var(--cta);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 15px 28px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      transition: opacity 0.2s, transform 0.2s;
+      width: 100%;
+      display: block;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.90;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      border: 2px solid var(--primary);
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s, color 0.2s;
+      width: 100%;
+      display: block;
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #4a5568;
+    }
+
+    .hero-trust-item svg {
+      color: var(--secondary);
+      flex-shrink: 0;
+    }
+
+    .hero-image {
+      flex: 1;
+      border-radius: var(--radius);
+      overflow: hidden;
+      max-height: 240px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    @media (min-width: 768px) {
+      .hero-inner {
+        flex-direction: row;
+        align-items: center;
+        padding: 80px 24px;
+        gap: 60px;
+      }
+
+      .hero-buttons {
+        flex-direction: row;
+        width: auto;
+      }
+
+      .btn-primary, .btn-secondary {
+        width: auto;
+      }
+
+      .hero-image {
+        max-height: 480px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-image {
+        max-height: 560px;
+      }
+    }
+
+    /* ===== SECTION COMMON ===== */
+    .section {
+      padding: 48px 20px;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: #4a5568;
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        padding: var(--section-padding) 24px;
+      }
+    }
+
+    /* ===== SERVICES RAPIDES ===== */
+    .services-section {
+      background: #fff;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      background: var(--background);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      border-left: 4px solid var(--primary);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(26,115,184,0.12);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(26,115,184,0.10);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .service-icon svg {
+      color: var(--primary);
+    }
+
+    .service-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: #4a5568;
+      line-height: 1.6;
+    }
+
+    @media (min-width: 600px) {
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* ===== ZONE INTERVENTION ===== */
+    .zone-section {
+      background: var(--background);
+    }
+
+    .zone-inner-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .zone-text h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .zone-text p {
+      font-size: 0.95rem;
+      color: #4a5568;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .zone-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .zone-tag {
+      background: rgba(26,115,184,0.10);
+      color: var(--primary);
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: var(--radius);
+    }
+
+    .map-container {
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 320px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .hours-table tr {
+      border-bottom: 1px solid #e8edf3;
+    }
+
+    .hours-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .hours-table td {
+      padding: 10px 0;
+      font-size: 0.9rem;
+    }
+
+    .hours-table td:first-child {
+      font-weight: 600;
+      color: var(--text);
+      text-transform: capitalize;
+      width: 50%;
+    }
+
+    .hours-table td:last-child {
+      color: #4a5568;
+    }
+
+    .hours-closed {
+      color: #e53e3e !important;
+      font-weight: 600;
+    }
+
+    .hours-open {
+      color: #38a169 !important;
+      font-weight: 600;
+    }
+
+    @media (min-width: 768px) {
+      .zone-inner-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+    }
+
+    /* ===== AVIS CLIENTS ===== */
+    .reviews-section {
+      background: #fff;
+    }
+
+    .reviews-header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .rating-badge-large {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--background);
+      border: 2px solid var(--secondary);
+      border-radius: var(--radius);
+      padding: 12px 20px;
+      width: fit-content;
+    }
+
+    .rating-badge-large .stars {
+      color: var(--secondary);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+    }
+
+    .rating-badge-large .score {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .rating-badge-large .count {
+      font-size: 0.85rem;
+      color: #4a5568;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .review-card {
+      background: var(--background);
+      border-radius: var(--radius);
+      padding: 24px;
+      border-top: 3px solid var(--secondary);
+      transition: transform 0.2s;
+    }
+
+    .review-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .review-stars {
+      color: var(--secondary);
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .review-text {
+      font-size: 0.92rem;
+      color: #4a5568;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .review-author {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    @media (min-width: 768px) {
+      .reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* ===== DEVIS GRATUIT ===== */
+    .devis-section {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .devis-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
+    }
+
+    .devis-inner h2 {
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .devis-inner p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    .devis-features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin: 8px 0;
+    }
+
+    .devis-feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.90);
+    }
+
+    .devis-feature svg {
+      color: var(--secondary);
+      flex-shrink: 0;
+    }
+
+    .btn-devis {
+      background: var(--secondary);
+      color: var(--text);
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 16px 36px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+
+    .btn-devis:hover {
+      opacity: 0.90;
+      transform: translateY(-2px);
+    }
+
+    @media (min-width: 768px) {
+      .btn-devis {
+        width: auto;
+      }
+    }
+
+    /* ===== CONTACT EXPRESS ===== */
+    .contact-section {
+      background: var(--background);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .contact-item-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(26,115,184,0.10);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item-icon svg {
+      color: var(--primary);
+    }
+
+    .contact-item-text strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .contact-item-text span {
+      font-size: 0.95rem;
+      color: #4a5568;
+    }
+
+    .contact-item-text a {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .contact-form-box {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .contact-form-box h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .contact-form-box p {
+      font-size: 0.88rem;
+      color: #4a5568;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #d1dce8;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--background);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--primary);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .btn-submit {
+      background: var(--cta);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-submit:hover {
+      opacity: 0.90;
+      transform: translateY(-1px);
+    }
+
+    @media (min-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1.4fr;
+      }
+    }
+
+    /* ===== FAQ ===== */
+    .faq-section {
+      background: #fff;
+    }
+
+    .faq-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 800px;
+    }
+
+    .faq-item {
+      border: 1.5px solid #e2eaf3;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      text-align: left;
+      gap: 12px;
+    }
+
+    .faq-question:hover {
+      background: var(--background);
+    }
+
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      background: rgba(26,115,184,0.10);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+      color: var(--primary);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 20px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 20px 18px;
+    }
+
+    .faq-answer p {
+      font-size: 0.92rem;
+      color: #4a5568;
+      line-height: 1.7;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery-section {
+      background: var(--background);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .gallery-grid img:first-child {
+      grid-column: span 2;
+      height: 240px;
+    }
+
+    @media (min-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+
+      .gallery-grid img {
+        height: 220px;
+      }
+
+      .gallery-grid img:first-child {
+        grid-column: span 2;
+        height: 220px;
+      }
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--text);
+      color: #fff;
+      padding: 48px 20px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .footer-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 8px 14px;
+    }
+
+    .footer-rating .stars {
+      color: var(--secondary);
+      font-size: 0.9rem;
+    }
+
+    .footer-rating .score {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .footer-rating .count {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.60);
+    }
+
+    .footer-col h4 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.50);
+      margin-bottom: 16px;
+    }
+
+    .footer-col p,
+    .footer-col a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      display: block;
+    }
+
+    .footer-col a:hover {
+      color: var(--secondary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.10);
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.40);
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+    }
+
+    /* ===== MODAL ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 32px;
+      width: 90%;
+      max-width: 420px;
+      position: relative;
+      animation: fadeInModal 0.2s ease;
+    }
+
+    @keyframes fadeInModal {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      color: #888;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+    }
+
+    .modal-close:hover {
+      color: var(--text);
+    }
+
+    .modal-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 14px;
+      padding-right: 24px;
+    }
+
+    .modal-body {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .modal-cta {
+      display: block;
+      width: 100%;
+      background: var(--cta);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      transition: opacity 0.2s;
+    }
+
+    .modal-cta:hover {
+      opacity: 0.88;
+    }
+
+    /* ===== PHONE STICKY ===== */
+    .phone-sticky {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 900;
+      background: var(--cta);
+      color: #fff;
+      border-radius: 50px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 20px rgba(233,79,55,0.40);
+      transition: transform 0.2s;
+      text-decoration: none;
+    }
+
+    .phone-sticky:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (min-width: 768px) {
+      .phone-sticky {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand">DA CUNHA Alexandre</a>
+      <ul class="nav-links">
+        <li><a href="#services-rapides">Services</a></li>
+        <li><a href="#zone-intervention">Zone</a></li>
+        <li><a href="#avis-clients">Avis</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact-express" class="nav-cta-btn">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="menu">
+    <a href="#services-rapides" role="menuitem">Services</a>
+    <a href="#zone-intervention" role="menuitem">Zone d'intervention</a>
+    <a href="#avis-clients" role="menuitem">Avis clients</a>
+    <a href="#devis-gratuit" role="menuitem">Devis gratuit</a>
+    <a href="#contact-express" role="menuitem">Contact</a>
+    <a href="#faq" role="menuitem">FAQ</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-text fade-in">
+        <span class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Pessac & environs
+        </span>
+        <h1>Plombier <span>Réactif</span> à Pessac</h1>
+        <p class="hero-sub">Interventions rapides et efficaces pour tous vos besoins en plomberie.</p>
+        <div class="hero-buttons">
+          <a href="tel:+33685208708" class="btn-primary">Demander une intervention</a>
+          <a href="#contact-express" class="btn-secondary">Obtenir un devis gratuit</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            Artisan certifié
+          </div>
+          <div class="hero-trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+            Disponible Lun–Ven
+          </div>
+          <div class="hero-trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-4h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg>
+            Devis gratuit
+          </div>
+          <div class="hero-trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            4.8/5 — 28 avis
+          </div>
+        </div>
+      </div>
+      <div class="hero-image fade-in">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tO4PiXvQIOqY1pIbv6pzdBFN8W9A2kxHv0q486U7__nz3KwVuhooMewI63V7NR9Iw4ezYHP-Ku1ztV0zqrNl88wFeO1yaNuZUofC-Yyunb2HFu7zABm8a7CnmS31KTfwQaOtHlXFv62ohnSm-hf5qW3oqzlJVeJzUHaIjpTpN9yNRry-WtKyaZ8XCbryaIRDv41y7iB_sfzzYr6iAKPhywSmKZwsKYENDiSpUkC7z5HLg4Ft3Wy9yPfO3lYZhJKstXg0rRZfRQtjo06v0Vy-XmRrn5SDPN4Ooi-upgw4JJ1VMbYupyuNDRAFvtGeiGoUfXwm6i8THEuk2AHTWiXoff0W-i0nEGWU2VEDze2kGMXnBfum0sqPwYftjiq5A2woOlyZbr6S7CQQ0yDikzzH2d-0OkJYkLR8ARlKXGLTg&key=AIzaSyCd8_Lzx6EPWwnELP47YrOwKzAMK9CV9fc" alt="DA CUNHA Alexandre — Plombier à Pessac" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES RAPIDES -->
+  <section class="section services-section" id="services-rapides">
+    <div class="section-inner">
+      <div class="fade-in">
+        <p class="section-label">Ce que nous faisons</p>
+        <h2 class="section-title">Nos Services</h2>
+        <p class="section-desc">Des solutions de plomberie complètes pour les particuliers et professionnels à Pessac et ses environs.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          </div>
+          <h3>Dépannage d'urgence</h3>
+          <p>Intervention rapide pour tous vos problèmes de plomberie.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+          </div>
+          <h3>Installation sanitaire</h3>
+          <p>Installation professionnelle de vos équipements sanitaires.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.66 8L12 2.35 6.34 8C4.78 9.56 4 11.64 4 13.64s.78 4.11 2.34 5.67 3.61 2.35 5.66 2.35 4.1-.79 5.66-2.35S20 15.64 20 13.64 19.22 9.56 17.66 8z"/></svg>
+          </div>
+          <h3>Réparation de fuites</h3>
+          <p>Réparation efficace et durable de vos fuites.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm1-11h-2v3H8v2h3v3h2v-3h3v-2h-3z"/></svg>
+          </div>
+          <h3>Entretien de chaudières</h3>
+          <p>Service complet pour maintenir vos chaudières en parfait état.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONE INTERVENTION -->
+  <section class="section zone-section" id="zone-intervention">
+    <div class="section-inner">
+      <div class="fade-in">
+        <p class="section-label">Où nous intervenons</p>
+        <h2 class="section-title">Horaires et Zone d'Intervention</h2>
+        <p class="section-desc">Basé à Pessac, DA CUNHA Alexandre intervient rapidement dans toute la métropole bordelaise.</p>
+      </div>
+      <div class="zone-inner-grid">
+        <div class="zone-text fade-in">
+          <h3>Communes desservies</h3>
+          <p>Nous intervenons à Pessac et dans les communes environnantes pour tous vos besoins en plomberie, avec des délais d'intervention parmi les plus courts de la région.</p>
+          <div class="zone-tags">
+            <span class="zone-tag">Pessac</span>
+            <span class="zone-tag">Bordeaux</span>
+            <span class="zone-tag">Mérignac</span>
+            <span class="zone-tag">Talence</span>
+            <span class="zone-tag">Gradignan</span>
+            <span class="zone-tag">Villenave-d'Ornon</span>
+            <span class="zone-tag">Léognan</span>
+          </div>
+          <h3>Horaires d'ouverture</h3>
+          <table class="hours-table">
+            <tbody>
+              <tr>
+                <td>Lundi</td>
+                <td class="hours-open">08:00 – 18:00</td>
+              </tr>
+              <tr>
+                <td>Mardi</td>
+                <td class="hours-open">08:00 – 18:00</td>
+              </tr>
+              <tr>
+                <td>Mercredi</td>
+                <td class="hours-open">08:00 – 18:00</td>
+              </tr>
+              <tr>
+                <td>Jeudi</td>
+                <td class="hours-open">08:00 – 18:00</td>
+              </tr>
+              <tr>
+                <td>Vendredi</td>
+                <td class="hours-open">08:00 – 18:00</td>
+              </tr>
+              <tr>
+                <td>Samedi</td>
+                <td class="hours-closed">Fermé</td>
+              </tr>
+              <tr>
+                <td>Dimanche</td>
+                <td class="hours-closed">Fermé</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="fade-in">
+          <div class="map-container">
+            <iframe
+              src="https://maps.google.com/maps?q=44.790090199999995,-0.6666598&z=16&output=embed"
+              title="Localisation DA CUNHA Alexandre — Pessac"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="contact-item" style="margin-top:16px;">
+            <div class="contact-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Adresse</strong>
+              <span>15 Rue Maryse Bastié, 33600 Pessac, France</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS CLIENTS -->
+  <section class="section reviews-section" id="avis-clients">
+    <div class="section-inner">
+      <div class="reviews-header fade-in">
+        <div>
+          <p class="section-label">Ce que disent nos clients</p>
+          <h2 class="section-title">Avis Clients</h2>
+        </div>
+        <div class="rating-badge-large">
+          <span class="stars">★★★★★</span>
+          <span class="score">4.8</span>
+          <span class="count">28 avis Google</span>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card fade-in">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">« Un grand merci pour notre dépannage rapide malgré un emploi du temps chargé. Solution trouvée la meilleure au meilleur prix. Et une grande qualité de réalisation. »</p>
+          <span class="review-author">Bruno FEYDIEU</span>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">« Suite à un problème sur l'évacuation d'un évier, Mr DA CUNHA a été très réactif, professionnel et efficace, le tout pour un tarif honnête. Je le recommande vivement et n'hésiterai pas à faire appel à lui pour toute autre intervention. »</p>
+          <span class="review-author">Mathieu Rouby</span>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">« Monsieur Da Cunha est un professionnel comme on en trouve rarement maintenant. Très réactif, se rend disponible, je le remercie encore d'être venu me dépanner dans l'urgence. Excellent artisan, je le recommande tout particulièrement. »</p>
+          <span class="review-author">Marie Rodriguez</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section gallery-section" id="galerie">
+    <div class="section-inner">
+      <div class="fade-in">
+        <p class="section-label">Nos réalisations</p>
+        <h2 class="section-title">Galerie de Réalisations</h2>
+        <p class="section-desc">Découvrez nos interventions réussies à Pessac et ses environs.</p>
+      </div>
+      <div class="gallery-grid fade-in">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tqVWOfGnMDjFls77QvSyife8cBgKgl-EXT7aQhi8N4uz0boN5yJ6B4XT48kE7rcyX35sqhrNCTdScq0PiK-w6EU5fOIcUgvslic7TcJlIr7ITdvXhGvXHgHnsYRSHk_bXVUdrYGMor_n9HFIbNRWKQiyM_fRXbZiU5D7D-K858riAfiNI6ig25Jhj-QTD6qdosU_jSFvY7LPrGnMZ4lym7K8jhvHCziYO_MsePM2cAZ8k7YV6SMObYj2MoaUYNBpevxnwJdIchXTzFu2Z3ryrd2OdZpdJS-7t1_Kxik12ClXHfxddLMiSYQhS0I1K0p2rul1Qcrn113QsG08AZsBcxDvdySwMcRssIffK1cosw_rdq2LWV7opjJYgUMhMbZ7I7KkT4hEkCH9pq5_eYo2MGV0tza3FqYKfzpL4SSPDwDw&key=AIzaSyCd8_Lzx6EPWwnELP47YrOwKzAMK9CV9fc" alt="Réalisation plomberie Pessac 1" loading="lazy">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-vUpjJzjplg3yVGmBRRLX_h0yUr672Aq7-dEyqXTvspYssMZuc4-hDotxfS0jK-6EBhtAtMBpAfAg6I-JAS5GRuJa-0raQA2Ndg0wHCW7CnbBELdFDTq2HY57sMsBoSrvIGY_VhwoS1dlHb9rW8UQp79OkddEsX3QK3tKY3noO63gJI007xUYRNi7UApp-eIYRF6IeSJ7dD_CIil8AA0hu7t_YgdKoUJDoPMS72BRHCgCanXlaW2_KXDe8Cdqpl3SuPOPB895TVWx0u46nX0gNm4JrRLqNkurMVOq2zDl4hbXIA2TsNp1zDBGn6MPvr8TASSJcYFyjBU-rv7bIKQaZN8ncGL6UylQ66uxHC6JBpXWGMo0peLy1tQ1IjVOTN6sbsQx7aXrnCYkmihmbnIsEvxa2qNGVOIzbcJTreRWk&key=AIzaSyCd8_Lzx6EPWwnELP47YrOwKzAMK9CV9fc" alt="Réalisation plomberie Pessac 2" loading="lazy">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-t3CLyG5plKvamyE8asIWrfYIAUShnoVwd-D-SJOOlifZDWlOblz9f_YHBxjTB1Mu1HZwSBpKcUHlQi635iwCyXboToUfusG3Qhrbv9n1VnkvggLAroBMVJ_asrgEyZD_kgrJU5WvvZ5sj7eK2LDuiiQgvUVWeo0T9GuMxPQ-U16pF2KoyBfzkzpECAP5_oDLNGwexCSR9imu9k8dr1TyJN7xDS9R-YEelpPuZpHxQFGA_0r8ODWDPw4ugjj7NtDSI-CBrFu26909b5Dzwk5cXO4o1eIbSwiKV9nLiU6Dt793VNJ9cWeAHzsmL3KtRiFAvhFV7vX1SObJQHklSJIfHIdAUPCZ1yvMkoycPZC47GY9nu6IiPFBd2rP629m2JspeFXhj0Gnwz805PqFz2VadGadjt-tvV8O9GTH5ti5IlYwg&key=AIzaSyCd8_Lzx6EPWwnELP47YrOwKzAMK9CV9fc" alt="Réalisation plomberie Pessac 3" loading="lazy">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-ukNx6dlY2KsW8vKqkO_glV3LN9XqgSqQ5TocX6x5NuKmbtrh5SX7Snj7A0zNWpEG9vAo99pDPu7IxyT7lMT_qY7LVqQMB16cfail6pNXRxM5PlHIUL2rlCZ0D5DMskfRqatrf2JEy6H48cVtB4aTn0f2o6dIwt8TRUk2RGsGBsFr39RqKljULSc34S32fHNQtv92Eyi-bsbqR6oCIq-OTw85r9Br-iTikThMgn1ZHgpt66X_y_fOlphY5mZgGqo_HEBTT9_6OCSBgDxv_MykUIUgXjcFyI9FAoZbfzNZ12cpJcuZEhU1j06Z6b0ncxvxOxkcIqpNwTCFaPfiN6nvMRWsVs-DYz6wiB4VpGI51r_NII7kcElX1EDiRjqapoBIkay6hThkMfO_OU9cFZuj7KG1imCPR4sr631DL2O7Gz3p-E&key=AIzaSyCd8_Lzx6EPWwnELP47YrOwKzAMK9CV9fc" alt="Réalisation plomberie Pessac 4" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVIS GRATUIT -->
+  <section class="section devis-section" id="devis-gratuit">
+    <div class="section-inner">
+      <div class="devis-inner fade-in">
+        <h2>Obtenez votre devis gratuit</h2>
+        <p>Besoin d'une estimation pour vos travaux de plomberie ? DA CUNHA Alexandre vous propose un devis clair, transparent et sans engagement. Contactez-nous dès aujourd'hui.</p>
+        <div class="devis-features">
+          <div class="devis-feature">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            Devis 100% gratuit
+          </div>
+          <div class="devis-feature">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+            Réponse rapide
+          </div>
+          <div class="devis-feature">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            Sans engagement
+          </div>
+          <div class="devis-feature">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Prix transparents
+          </div>
+        </div>
+        <a href="tel:+33685208708" class="btn-devis">📞 Appeler pour un devis — +33 6 85 20 87 08</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT EXPRESS -->
+  <section class="section contact-section" id="contact-express">
+    <div class="section-inner">
+      <div class="fade-in">
+        <p class="section-label">Nous joindre</p>
+        <h2 class="section-title">Contactez-nous</h2>
+        <p class="section-desc">Pour toute demande, veuillez nous appeler ou remplir notre formulaire de contact.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info fade-in">
+          <h3>Informations de contact</h3>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Téléphone</strong>
+              <a href="tel:+33685208708">+33 6 85 20 87 08</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Adresse</strong>
+              <span>15 Rue Maryse Bastié<br>33600 Pessac, France</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Horaires</strong>
+              <span>Lundi – Vendredi : 08:00 – 18:00<br>Samedi & Dimanche : Fermé</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Note Google</strong>
+              <span>4.8 / 5 — 28 avis vérifiés</span>
+            </div>
+          </div>
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJPYDtxxEhVQ0R-W2dPU2jBU4" target="_blank" rel="noopener" class="btn-secondary" style="display:inline-block;width:auto;margin-top:8px;">Voir sur Google Maps</a>
+        </div>
+        <div class="contact-form-box fade-in">
+          <h3>Envoyer un message</h3>
+          <p>Décrivez votre besoin et nous vous répondrons dans les plus brefs délais.</p>
+          <form id="contactForm" action="#" novalidate>
+            <div class="form-group">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.fr" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00">
+            </div>
+            <div class="form-group">
+              <label for="service">Type de service</label>
+              <select id="service" name="service">
+                <option value="">Sélectionnez un service</option>
+                <option value="urgence">Dépannage d'urgence</option>
+                <option value="installation">Installation sanitaire</option>
+                <option value="fuite">Réparation de fuites</option>
+                <option value="chaudiere">Entretien de chaudières</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Décrivez votre problème ou votre demande..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Envoyer ma demande</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section" id="faq">
+    <div class="section-inner">
+      <div class="fade-in">
+        <p class="section-label">Questions fréquentes</p>
+        <h2 class="section-title">FAQ</h2>
+        <p class="section-desc">Retrouvez les réponses aux questions les plus fréquemment posées par nos clients.</p>
+      </div>
+      <div class="faq-list fade-in">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Intervenez-vous en urgence le jour même ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, DA CUNHA Alexandre propose des interventions d'urgence rapides du lundi au vendredi de 08h00 à 18h00. Appelez directement au +33 6 85 20 87 08 pour une prise en charge immédiate.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Proposez-vous des devis gratuits ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolument. Nous proposons des devis entièrement gratuits et sans engagement. Contactez-nous par téléphone ou via notre formulaire de contact pour obtenir une estimation précise de votre projet.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Dans quelles communes intervenez-vous ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Nous intervenons principalement à Pessac et dans toute la métropole bordelaise : Bordeaux, Mérignac, Talence, Gradignan, Villenave-d'Ornon, Léognan et les communes environnantes.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Quels types de travaux réalisez-vous ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Nous couvrons l'ensemble des besoins en plomberie : dépannage d'urgence, installation sanitaire, réparation de fuites, entretien et remplacement de chaudières. N'hésitez pas à nous contacter pour tout autre besoin spécifique.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Vos tarifs sont-ils transparents ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, la transparence tarifaire est au cœur de notre démarche. Nous vous communiquons le coût de l'intervention avant de commencer les travaux, sans surprise ni frais cachés.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>DA CUNHA Alexandre</h3>
+          <p>Votre plombier de confiance à Pessac. Interventions rapides, tarifs transparents et qualité garantie.</p>
+          <div class="footer-rating">
+            <span class="stars">★★★★★</span>
+            <span class="score">4.8/5</span>
+            <span class="count">28 avis</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+33685208708">+33 6 85 20 87 08</a>
+          <p>15 Rue Maryse Bastié<br>33600 Pessac, France</p>
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJPYDtxxEhVQ0R-W2dPU2jBU4" target="_blank" rel="noopener" style="margin-top:8px;">Voir sur Google Maps →</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <p>Dépannage d'urgence</p>
+          <p>Installation sanitaire</p>
+          <p>Réparation de fuites</p>
+          <p>Entretien de chaudières</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 DA CUNHA Alexandre — Plombier à Pessac. Tous droits réservés.</p>
+        <p>Lun–Ven : 08:00–18:00 · +33 6 85 20 87 08</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PHONE STICKY (mobile) -->
+  <a href="tel:+33685208708" class="phone-sticky" aria-label="Appeler DA CUNHA Alexandre">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    Appeler maintenant
+  </a>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Fermer">×</button>
+      <h2 class="modal-title" id="modalTitle">Formulaire de contact</h2>
+      <p class="modal-body">
+        Merci pour votre message ! 🎉<br><br>
+        Ce formulaire de contact sera pleinement activé après l'acquisition de votre site web. Pour débloquer cette fonctionnalité et permettre à vos clients de vous contacter directement en ligne, il vous suffit de finaliser votre commande.<br><br>
+        Cliquez ci-dessous pour activer votre site et recevoir vos demandes de contact dès aujourd'hui.
+      </p>
+      <a href="mailto:team@kamkod.com?subject=Website%20DA%20CUNHA%20Alexandre%20%E2%80%94%20ChIJPYDtxxEhVQ0R-W2dPU2jBU4" class="modal-cta">Activer mon site web →</a>
+    </div>
+  </div>
+
+  <script>
+    // ===== HAMBURGER MENU =====
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', function() {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ===== SMOOTH SCROLL =====
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 70;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ===== FADE IN ON SCROLL =====
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    fadeEls.forEach(function(el) {
+      observer.observe(el);
+    });
+
+    // ===== FAQ ACCORDION =====
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const item = this.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item').forEach(function(i) {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ===== MODAL =====
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalClose = document.getElementById('modalClose');
+    const contactForm = document.getElementById('contactForm');
+
+    function openModal() {
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        openModal();
+      });
+    }
+
+    modalClose.addEventListener('click', closeModal);
+
+    modalOverlay.addEventListener('click', function(e) {
+      if (e.target === modalOverlay) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // ===== NAV SCROLL SHADOW =====
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 10) {
+        nav.style.boxShadow = '0 2px 20px rgba(26,115,184,0.15)';
+      } else {
+        nav.style.boxShadow = '0 2px 12px rgba(26,115,184,0.10)';
+      }
+    });
+  </script>
+</body>
+</html>
